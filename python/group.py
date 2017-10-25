@@ -3,7 +3,6 @@
 
 # https://pythoniter.appspot.com/
 
-import math
 import json
 
 from fractions import gcd
@@ -34,13 +33,15 @@ def subgroup(a):
         d[e] = []
 
         for i in range(ls):
-            ee = math.pow(e, i) % a
+            ee = int((e ** i) % a)
+            
+            if 1 == ee and i > 0:
+            	break
 
-            if ee in l:
-                if ee not in d[e]:
-                    d[e].append(int(ee))
+            if ee in l and ee not in d[e]:
+                d[e].append(ee)
 
-        d[e].sort()
+        #d[e].sort()
 
     return d
 
