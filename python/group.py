@@ -23,6 +23,18 @@ def coprime(a):
     return l
 
 
+# Return orders of subgroups as list
+def order(a):
+    l = []
+    c = coprime(a)
+    cs = len(c)
+
+    for i in range(cs):
+        l.append(cs / gcd(cs, i))
+
+    return l
+
+
 # Return subgroups as dictionary
 def subgroup(a):
     d = {}
