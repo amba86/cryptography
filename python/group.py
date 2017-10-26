@@ -63,9 +63,12 @@ def generator(a):
     g = []
     c = coprime(a)
     s = subgroup(a)
+    cl = len(c)
 
     for (k, v) in s.iteritems():
-        if c == v:
+        v.sort()
+
+        if len(v) == cl and c == v:
             g.append(k)
 
     return g
