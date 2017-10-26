@@ -46,14 +46,14 @@ def subgroup(a):
 
         for i in range(ls):
             ee = int((e ** i) % a)
-            
+
             if 1 == ee and i > 0:
-            	break
+                break
 
             if ee in l and ee not in d[e]:
                 d[e].append(ee)
 
-        #d[e].sort()
+        # d[e].sort()
 
     return d
 
