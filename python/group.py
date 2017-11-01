@@ -9,6 +9,7 @@ from fractions import gcd
 
 
 # Return a list of coprimes
+
 def coprime(a):
     b = a - 1
     l = []
@@ -24,6 +25,7 @@ def coprime(a):
 
 
 # Return orders of subgroups as list
+
 def order(a):
     l = []
     c = coprime(a)
@@ -36,6 +38,7 @@ def order(a):
 
 
 # Return subgroups as dictionary
+
 def subgroup(a):
     d = {}
     l = coprime(a)
@@ -45,7 +48,7 @@ def subgroup(a):
         d[e] = []
 
         for i in range(ls):
-            ee = int((e ** i) % a)
+            ee = int(e ** i % a)
 
             if 1 == ee and i > 0:
                 break
@@ -59,6 +62,7 @@ def subgroup(a):
 
 
 # Returns generators
+
 def generator(a):
     g = []
     c = coprime(a)
@@ -75,14 +79,22 @@ def generator(a):
 
 
 # Returns length of a content
+
 def l(l):
     return len(l)
 
 
 # Pretty print specified dictionary
+
 def p(a):
     for (k, v) in a.iteritems():
         v.sort()
 
     print json.dumps(a, sort_keys=True)
+
+
+# Compute the lowest common multiple of a and b
+
+def lcm(a, b):
+    return a * b / gcd(a, b)
 
