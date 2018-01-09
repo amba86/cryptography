@@ -7,6 +7,9 @@
 # http://www.inf.fh-flensburg.de/lang/krypto/algo/chinese-remainder.htm
 # c list of coprimes
 # r list of remainders
+# Returns
+# 1. Product of coprimes.
+# 2. The chinese remainder.
 def cr(c, r):
     if len(c) == 1:
         return (c[0], r[0])
@@ -21,6 +24,10 @@ def cr(c, r):
 
 
 # Extended euclidean algorithm
+# Returns
+# 1. Great common divisor
+# 2. Modular inverse of a in ring b
+# 3. Modular inverse of b in ring a
 def egcd(a, b):
     if a == 0:
         return (b, 0, 1)
